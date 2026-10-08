@@ -1,0 +1,10 @@
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+pydantic>=2.10.0
+Pillow>=11.0.0
+numpy>=1.26.0
+pydicom>=3.0.0
+torch>=2.2.0
+torchvision>=0.17.0
+huggingface-hub>=0.28.0

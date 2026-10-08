@@ -25,6 +25,8 @@ medical-image-analysis/tests/fixtures/*
 !medical-image-analysis/tests/fixtures/test_cases.json
 brain-mri-analysis/tests/fixtures/*
 !brain-mri-analysis/tests/fixtures/test_cases.json
+brain-ct-analysis/tests/fixtures/*
+!brain-ct-analysis/tests/fixtures/test_cases.json
 
 # Framework output
 /.next/

@@ -1,0 +1,18 @@
+[
+  {
+    "name": "empty_upload",
+    "expected_status": 400,
+    "expected_detail_contains": "Empty image file"
+  },
+  {
+    "name": "invalid_raster_bytes",
+    "content_type": "image/png",
+    "expected_status": 400,
+    "expected_detail_contains": "readable"
+  },
+  {
+    "name": "malformed_health_context",
+    "expected_status": 422,
+    "expected_detail_contains": "health_model_summary"
+  }
+]

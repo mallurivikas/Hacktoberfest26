@@ -136,6 +136,24 @@ PyTorch. Deploy it as a separate Vercel project with that directory as the
 project root. Its public `/xray` endpoint should be used as the frontend's
 `XRAY_API_URL`.
 
+### Research imaging services
+
+The medical branch is intentionally split into independent services so the UX
+client can call only the modality it needs. Each accepts an optional
+`health_model_summary` JSON field from the tabular-model branch as display
+context; it never changes image-model scores.
+
+| Service | Run port | Endpoint | Scope |
+| --- | --- | --- | --- |
+| `medical-image-analysis` | `8002` | `POST /api/v1/medical/scan/analyze` | Chest X-ray pathology scoring |
+| `brain-mri-analysis` | `8003` | `POST /api/v1/medical/mri/analyze` | 2D brain MRI four-class demo |
+| `brain-ct-analysis` | `8004` | `POST /api/v1/medical/ct/analyze` | Single-slice brain CT haemorrhage screening |
+
+For the CT service, use `brain-ct-analysis/README.md`. It accepts JPG, PNG,
+and WEBP images plus single-frame DICOM files, but deliberately rejects CT
+volumes. Its compact ResNet-18 checkpoint is only intended for the documented
+2D brain-CT research demo, so callers must submit an axial brain CT slice.
+
 ## API overview
 
 | Route | Purpose |
